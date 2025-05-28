@@ -3,8 +3,8 @@
     padding: 0;
 }
 :root{
-    --rojo:red;
-    --amarillo: yellow;
+    --rojo:rgb(43, 255, 0);
+    --amarillo: rgba(111, 201, 100, 0.288);
     --verde: green;
 }
 main{
@@ -18,19 +18,22 @@ section{
     margin: 1vh;
 }
 .fondo_amarillo{
-    background: blue;
+    background: rgb(255, 230, 0);
 }
 .fondo_rojo{
     background: red;
 }
 .fondo_verde{
-    background: blue;
+    background: rgb(9, 255, 0);
 }
-@media(max-width: 580px){
+@media(max-width: 720px){
     main{
         flex-direction: column;
     }
     section{
         width: 100%;
+    }
+    .fondo_rojo{
+        display: none;
     }
 }
