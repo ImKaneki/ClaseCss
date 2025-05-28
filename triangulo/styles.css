@@ -1,0 +1,56 @@
+.figura {
+  width: 150px;
+  height: 150px;
+  margin: 100px auto;
+  background-color: #f39c12; /* Triángulo: naranja */
+  clip-path: polygon(
+    50% 0%,   /* punta arriba */
+    0% 100%,  /* abajo izquierda */
+    100% 100% /* abajo derecha */
+  );
+  border-radius: 0;
+  transition: background-color 2s ease, border-radius 2s ease;
+  animation-fill-mode: forwards;
+}
+
+.figura:hover {
+  animation: transformShape 6s forwards;
+}
+
+@keyframes transformShape {
+  0% {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #f39c12;
+    border-radius: 0;
+  }
+  33.33% {
+    clip-path: polygon(
+      0% 0%,    /* arriba izquierda */
+      0% 100%,  /* abajo izquierda */
+      100% 100%,/* abajo derecha */
+      100% 0%   /* arriba derecha */
+    );
+    background-color: #3498db; /* azul */
+    border-radius: 0;
+  }
+  66.66% {
+    clip-path: polygon(
+      0% 0%,    /* arriba izquierda */
+      0% 100%,  /* abajo izquierda */
+      100% 100%,/* abajo derecha */
+      100% 0%   /* arriba derecha */
+    );
+    background-color: #2ecc71; /* verde */
+    border-radius: 50%;
+  }
+  100% {
+    clip-path: polygon(
+      0% 0%,    /* arriba izquierda */
+      0% 100%,  /* abajo izquierda */
+      100% 100%,/* abajo derecha */
+      100% 0%   /* arriba derecha */
+    );
+    background-color: #2ecc71;
+    border-radius: 50%;
+  }
+}

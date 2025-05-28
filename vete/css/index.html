@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veterinaria Los Milagros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde: #3a7d44;
+      --gris-claro: #f5f5f5;
+      --blanco: #ffffff;
+      --fuente: 'Poppins', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--fuente);
+      background-color: var(--gris-claro);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--verde);
+      color: var(--blanco);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      background-color: var(--blanco);
+      color: var(--verde);
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #e0f2e9;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--blanco);
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: var(--blanco);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+
+    form input, form select, form button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+
+    form button {
+      background-color: var(--verde);
+      color: var(--blanco);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #2d5c33;
+    }
+
+    .legal-note {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .legal-note a {
+      color: var(--verde);
+      text-decoration: none;
+    }
+
+    .success-message {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header>
+    <h1>Cuida a tu Mascota con Amor Profesional 🐾</h1>
+    <p>Agenda citas en línea de forma rápida y segura. En Veterinaria Los Milagros, tu mascota recibe el mejor cuidado.</p>
+    <button class="cta-button" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Reservar Cita Ahora</button>
+  </header>
+
+  <!-- BENEFICIOS -->
+  <section class="section">
+    <h2>¿Por Qué Elegirnos?</h2>
+    <div class="cards">
+      <div class="card">
+        <span>🏥</span>
+        <h3>Atención Personalizada</h3>
+        <p>Veterinarios especializados en cada tipo de mascota.</p>
+      </div>
+      <div class="card">
+        <span>⏱️</span>
+        <h3>Agendamiento Rápido</h3>
+        <p>Reserva en 2 clics, sin esperas.</p>
+      </div>
+      <div class="card">
+        <span>🚑</span>
+        <h3>Emergencias 24/7</h3>
+        <p>Cuidamos a tu compañero en cualquier momento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="section" id="contacto">
+    <h2>¡Programa una Cita Ahora!</h2>
+    <form id="formulario">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" required />
+
+      <label for="correo">Correo Electrónico</label>
+      <input type="email" id="correo" name="correo" required />
+
+      <label for="mascota">Tipo de mascota</label>
+      <select id="mascota" name="mascota">
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+        <option value="otro">Otro</option>
+      </select>
+
+      <label for="fecha">Fecha deseada</label>
+      <input type="date" id="fecha" name="fecha" required />
+
+      <button type="submit">Enviar Solicitud</button>
+      <div id="respuesta" class="success-message" style="display:none;">¡Solicitud enviada con éxito!</div>
+    </form>
+    <p class="legal-note">Al enviar, aceptas nuestra <a href="#">Política de Privacidad</a>.</p>
+  </section>
+
+  <script>
+    // Simular envío de formulario
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('respuesta').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
