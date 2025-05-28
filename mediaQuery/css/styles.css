@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --rojo:red;
+    --amarillo: yellow;
+    --verde: green;
+}
+main{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+section{
+    height: 100%;
+    width: 33%;
+    margin: 1vh;
+}
+.fondo_amarillo{
+    background: blue;
+}
+.fondo_rojo{
+    background: red;
+}
+.fondo_verde{
+    background: blue;
+}
+@media(max-width: 580px){
+    main{
+        flex-direction: column;
+    }
+    section{
+        width: 100%;
+    }
+}
